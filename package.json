@@ -1,5 +1,5 @@
 {
-  "name": "rc-dialog",
+  "name": "@ascentia/rc-dialog",
   "version": "7.4.0",
   "description": "dialog ui component for react",
   "keywords": [
