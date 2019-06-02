@@ -347,6 +347,11 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
     this.checkScrollbar();
     this.setScrollbar();
     document.body.style.overflow = 'hidden';
+    const scrollY = window.scrollY;
+    document.body.style.height = '100vh';
+    if (scrollY > 0) {
+      document.body.scrollTop = scrollY;
+    }
     // this.adjustDialog();
   }
   removeScrollingEffect = () => {
@@ -355,6 +360,11 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
       return;
     }
     document.body.style.overflow = '';
+    const scrollY = document.body.scrollTop;
+    document.body.style.height = '';
+    if (scrollY > 0) {
+      window.scrollTo(window.scrollX, scrollY);
+    }
     this.resetScrollbar();
     // this.resetAdjustments();
   }
